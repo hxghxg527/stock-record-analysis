@@ -1,0 +1,27 @@
+.sra_login_page {
+  .sra_login_page_header {
+    height: 90px;
+    background: #fff;
+
+    .sra_login_page_header_left_container {
+      width: 1024px;
+      height: 60px;
+      margin: auto;
+      padding-top: 15px;
+      img {
+        height: 60px;
+      }
+      .sra_login_page_header_left_text {
+        font-size: 22px;
+        height: 60px;
+        line-height: 60px;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .sra_login_page_middle_container {
+    background: url($sra-global-icon-url + "login_bg1.jpg") no-repeat center;
+    height: calc(100vh - 90px);
+  }
+}
