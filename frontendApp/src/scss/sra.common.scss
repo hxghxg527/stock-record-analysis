@@ -1,0 +1,79 @@
+$sra-global-font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+$sra-global-font-family-medium: "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+$sra-global-font-family-headline: Georgia, Times, "Times New Roman", serif;
+$sra-global-server-url: "";
+$sra-global-icon-url: "../icons/";
+$sra-global-icon-image: "icons.png"; // ALWAYS use these variables when defining absolute font weights
+$sra-global-font-weight-light: 300; // may fallback to normal
+$sra-global-font-weight-normal: normal; // 400;
+$sra-global-font-weight-medium: 500; // may fallback to normal
+$sra-global-font-weight-bold: bold; // 700;
+$sra-global-font-weight-heavy: 900; // may fallback to bold
+
+html {
+  overflow: hidden;
+}
+
+body,
+html {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-family: $sra-global-font-family;
+  font-size: 12px;
+}
+
+li,
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a,
+div,
+li,
+ul {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  &:focus {
+    outline: none
+  }
+}
+
+// clear fix
+.sra_clearfix {
+  &:after,
+  &:before {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// float
+.sra_f_l {
+  float: left;
+}
+
+.sra_f_r {
+  float: right;
+}
+
+// text align
+.sra_t {
+  &_l {
+    text-align: left;
+  }
+  &_c {
+    text-align: center;
+  }
+  &_r {
+    text-align: right;
+  }
+}

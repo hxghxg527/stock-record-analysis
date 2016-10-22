@@ -1,1 +1,3 @@
-angular.module('sra.service', []);
+angular.module('sra.service', [
+    'sra.service.communication'
+]);

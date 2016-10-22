@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="sra.app">
 <head>
     <meta charset="UTF-8">
-    <title>Stock Record And Analysis</title>
+    <title ng-bind="$root.internal.appName"></title>
     <link type="text/css" rel="stylesheet" href="compiledFiles/sra.css">
     <script type="text/javascript" src="compiledFiles/third-party-libs.js"></script>
 </head>
 <body>
-<div>this app is for stock record and analysis.</div>
+<div ng-controller="sraCtrlCPU as sraCtrlCPU">
+    <ui-view></ui-view>
+</div>
 </body>
 <script type="text/javascript" src="compiledFiles/sra.js"></script>
 </html>

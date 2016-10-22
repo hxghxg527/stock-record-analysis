@@ -17,7 +17,7 @@ var gulp = require('gulp'),
     csso = require('gulp-csso'),
     concat = require('gulp-concat'),
     change = require('gulp-change'),
-    configJson = require('./src/config.json'),
+    configJson = require('./src/sra.config.json'),
     execFile = require('child_process').execFile,
     filter = require('gulp-filter'),
     browserSync = require('browser-sync').create(),
@@ -136,7 +136,7 @@ gulp.task('move_files_release', function() {
 var configJsonEnvironmentReg = new RegExp('"' + configJson.environment + '"');
 
 gulp.task('move_config_json_for_qa_release', function() {
-    return gulp.src('./src/config.json')
+    return gulp.src('./src/sra.config.json')
         .pipe(change(function(content) {
             return content.replace(configJsonEnvironmentReg, '\"qa\"');
         }))
@@ -144,7 +144,7 @@ gulp.task('move_config_json_for_qa_release', function() {
 });
 
 gulp.task('move_config_json_for_staging_release', function() {
-    return gulp.src('./src/config.json')
+    return gulp.src('./src/sra.config.json')
         .pipe(change(function(content) {
             return content.replace(configJsonEnvironmentReg, '\"staging\"');
         }))
@@ -152,7 +152,7 @@ gulp.task('move_config_json_for_staging_release', function() {
 });
 
 gulp.task('move_config_json_for_liveUS_release', function() {
-    return gulp.src('./src/config.json')
+    return gulp.src('./src/sra.config.json')
         .pipe(change(function(content) {
             return content.replace(configJsonEnvironmentReg, '\"liveUS\"');
         }))
@@ -160,7 +160,7 @@ gulp.task('move_config_json_for_liveUS_release', function() {
 });
 
 gulp.task('move_config_json_for_liveCN_release', function() {
-    return gulp.src('./src/config.json')
+    return gulp.src('./src/sra.config.json')
         .pipe(change(function(content) {
             return content.replace(configJsonEnvironmentReg, '\"liveCN\"');
         }))
