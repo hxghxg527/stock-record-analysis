@@ -34,7 +34,7 @@ function handleError() {
 }
 
 gulp.task('compile_scss_dev', function() {
-    gulp.src('./src/scss/app.scss')
+    gulp.src('./src/scss/sra.import.scss')
         .pipe(sourcemaps.init())
         .pipe(sass())
         .on('error', handleError)
