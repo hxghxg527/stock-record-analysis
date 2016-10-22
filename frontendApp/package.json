@@ -1,0 +1,31 @@
+{
+  "name": "stock-frontend",
+  "version": "1.0.0",
+  "description": "stock frontend codes",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hxghxg527",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^6.5.1",
+    "bower": "^1.7.9",
+    "child_process": "^1.0.2",
+    "gulp": "^3.9.1",
+    "gulp-change": "^1.0.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-csso": "^2.0.0",
+    "gulp-filter": "^4.0.0",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-ng-html2js": "^0.2.2",
+    "gulp-notify": "^2.2.0",
+    "gulp-postcss": "^6.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sequence": "^0.4.6",
+    "gulp-sourcemaps": "^2.1.1",
+    "gulp-uglify": "^2.0.0"
+  }
+}

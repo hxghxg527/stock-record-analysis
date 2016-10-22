@@ -1,0 +1,56 @@
+{
+  "environment": "test",
+  "envCategories": {
+    "develop": {
+      "mediaPrefixer": "http://cnshhq-e1qa100:8000/resource/",
+      "requestUrlList": {
+        "getStudentsDetails": "./json/studentsBatch.json",
+        "getProgressTestSummary": "./json/ptViewerData.json"
+      },
+      "iframeUrlOfActivityRendered": "../ar/src/index.html?l=pt&t=progress_test&e=pt_viewer"
+    },
+    "test": {
+      "mediaPrefixer": "http://cnshhq-e1qa100:8000/resource/",
+      "requestUrlList": {
+        "getStudentInfoByStudentIdBatch": "http://cnshhq-e1qa100:8000/api/v1/user/StudentIdBatch/",
+        "getHomeworkStructure": "http://cnshhq-e1qa100:8000/api/v1/HomeworkViewer/BookStructure/",
+        "queryStudentsHomeworkAnswers": "http://cnshhq-e1qa100:8000/api/v1/HomeworkViewer/Answers/",
+        "queryStudentsHomeworkProgressInfo": "http://cnshhq-e1qa100:8000/api/v1/HomeworkViewer/ProgressInfo/",
+        "getDynamicActivityContentByKeys": "http://cnshhq-e1qa100:8000/api/v1/DynamicActivityContent/Batch/"
+      },
+      "iframeUrlOfActivityRendered": "../ar/src/index.html?l=pt&t=progress_test&e=pt_viewer"
+    },
+    "qa": {
+      "mediaPrefixer": "http://cnshhq-e1qa100:8000/resource/",
+      "requestUrlList": {
+        "getStudentsDetails": "http://cnshhq-e1qa100:8000/api/v1/user/studentidbatch",
+        "getProgressTestSummary": "http://cnshhq-e1qa100:8000/api/v1/ProgressTestSummary/Viewer"
+      },
+      "iframeUrlOfActivityRendered": "./ar/index.html?l=pt&t=progress_test&e=pt_viewer"
+    },
+    "staging": {
+      "mediaPrefixer": "http://tbv3service-staging.ef.com/resource/",
+      "requestUrlList": {
+        "getStudentsDetails": "http://tbv3service-staging.ef.com/api/v1/user/studentidbatch",
+        "getProgressTestSummary": "http://tbv3service-staging.ef.com/api/v1/ProgressTestSummary/Viewer"
+      },
+      "iframeUrlOfActivityRendered": "./ar/index.html?l=pt&t=progress_test&e=pt_viewer"
+    },
+    "liveUS": {
+      "mediaPrefixer": "https://e1svc.ef.com/resource/",
+      "requestUrlList": {
+        "getStudentsDetails": "https://e1svc.ef.com/api/v1/user/studentidbatch",
+        "getProgressTestSummary": "https://e1svc.ef.com/api/v1/ProgressTestSummary/Viewer"
+      },
+      "iframeUrlOfActivityRendered": "./ar/index.html?l=pt&t=progress_test&e=pt_viewer"
+    },
+    "liveCN": {
+      "mediaPrefixer": "https://tbv3service.ef.cn/resource/",
+      "requestUrlList": {
+        "getStudentsDetails": "https://tbv3service.ef.cn/api/v1/user/studentidbatch",
+        "getProgressTestSummary": "https://tbv3service.ef.cn/api/v1/ProgressTestSummary/Viewer"
+      },
+      "iframeUrlOfActivityRendered": "./ar/index.html?l=pt&t=progress_test&e=pt_viewer"
+    }
+  }
+}
