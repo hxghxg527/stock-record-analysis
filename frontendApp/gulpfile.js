@@ -33,7 +33,7 @@ function handleError() {
     this.emit();
 }
 
-gulp.task('compile_scss_dev', function() {
+gulp.task('compile_scss_dev', function () {
     gulp.src('./src/scss/sra.import.scss')
         .pipe(sourcemaps.init())
         .pipe(sass())
@@ -50,7 +50,7 @@ gulp.task('compile_scss_dev', function() {
         }));
 });
 
-gulp.task('compress_css_dev', function() {
+gulp.task('compress_css_dev', function () {
     gulp.src('./src/compiledFiles/sra.css')
         .pipe(csso())
         .on('error', handleError)
@@ -58,7 +58,7 @@ gulp.task('compress_css_dev', function() {
         .pipe(gulp.dest('./src/compiledFiles'));
 });
 
-gulp.task('concat_js_dev', function() {
+gulp.task('concat_js_dev', function () {
     gulp.src('./src/js/**/*.js')
         .pipe(sourcemaps.init())
         .pipe(concat('sra.js', {
@@ -72,7 +72,7 @@ gulp.task('concat_js_dev', function() {
         }));
 });
 
-gulp.task('compress_js_dev', function() {
+gulp.task('compress_js_dev', function () {
     gulp.src('./src/compiledFiles/sra.js')
         .pipe(uglify())
         .on('error', handleError)
@@ -80,19 +80,19 @@ gulp.task('compress_js_dev', function() {
         .pipe(gulp.dest('./src/compiledFiles'));
 });
 
-gulp.task('concat_js_lib_dev', function() {
+gulp.task('concat_js_lib_dev', function () {
     gulp.src([
-            './bower_modules/jquery/dist/jquery.min.js',
-            './bower_modules/angular/angular.min.js',
-            './bower_modules/angular-ui-router/release/angular-ui-router.min.js'
-        ])
+        './bower_modules/jquery/dist/jquery.min.js',
+        './bower_modules/angular/angular.min.js',
+        './bower_modules/angular-ui-router/release/angular-ui-router.min.js'
+    ])
         .pipe(concat('third-party-libs.js', {
             newLine: ';\r\n'
         }))
         .pipe(gulp.dest('./src/compiledFiles'));
 });
 
-gulp.task('cache_tpl_html_dev', function() {
+gulp.task('cache_tpl_html_dev', function () {
     gulp.src('./src/tpl/**/*.html')
         .pipe(minifyHtml({
             empty: true,
@@ -107,7 +107,7 @@ gulp.task('cache_tpl_html_dev', function() {
         .pipe(gulp.dest("./src/js/templateCache"));
 });
 
-gulp.task('clean_scripts_dev', function() {
+gulp.task('clean_scripts_dev', function () {
     return gulp.src('./src/compiledFiles/**/*')
         .pipe(clean());
 });
@@ -119,7 +119,7 @@ gulp.task('clean_scripts_dev', function() {
 //         .pipe(clean());
 // });
 
-gulp.task('move_files_release', function() {
+gulp.task('move_files_release', function () {
     gulp.src('./src/compiledFiles/**/*')
         .pipe(gulp.dest('./release/compiledFiles'));
 
@@ -129,39 +129,42 @@ gulp.task('move_files_release', function() {
     gulp.src('./src/json/**/*')
         .pipe(gulp.dest('./release/json'));
 
+    gulp.src('./src/thirdPartyPlugins/**/*')
+        .pipe(gulp.dest('./release/thirdPartyPlugins'));
+
     gulp.src('./src/*.html')
         .pipe(gulp.dest('./release'));
 });
 
 var configJsonEnvironmentReg = new RegExp('"' + configJson.environment + '"');
 
-gulp.task('move_config_json_for_qa_release', function() {
+gulp.task('move_config_json_for_qa_release', function () {
     return gulp.src('./src/sra.config.json')
-        .pipe(change(function(content) {
+        .pipe(change(function (content) {
             return content.replace(configJsonEnvironmentReg, '\"qa\"');
         }))
         .pipe(gulp.dest('./release'));
 });
 
-gulp.task('move_config_json_for_staging_release', function() {
+gulp.task('move_config_json_for_staging_release', function () {
     return gulp.src('./src/sra.config.json')
-        .pipe(change(function(content) {
+        .pipe(change(function (content) {
             return content.replace(configJsonEnvironmentReg, '\"staging\"');
         }))
         .pipe(gulp.dest('./release'));
 });
 
-gulp.task('move_config_json_for_liveUS_release', function() {
+gulp.task('move_config_json_for_liveUS_release', function () {
     return gulp.src('./src/sra.config.json')
-        .pipe(change(function(content) {
+        .pipe(change(function (content) {
             return content.replace(configJsonEnvironmentReg, '\"liveUS\"');
         }))
         .pipe(gulp.dest('./release'));
 });
 
-gulp.task('move_config_json_for_liveCN_release', function() {
+gulp.task('move_config_json_for_liveCN_release', function () {
     return gulp.src('./src/sra.config.json')
-        .pipe(change(function(content) {
+        .pipe(change(function (content) {
             return content.replace(configJsonEnvironmentReg, '\"liveCN\"');
         }))
         .pipe(gulp.dest('./release'));
@@ -177,7 +180,7 @@ gulp.task('releaseLiveCN', sequence('_releaseCommon', 'move_config_json_for_live
 
 //===release task end
 
-gulp.task('watch', ['dev'], function() {
+gulp.task('watch', ['dev'], function () {
     gulp.watch('./src/js/**/*.js', ['concat_js_dev']);
     gulp.watch('./src/compiledFiles/sra.js', ['compress_js_dev']);
 
@@ -189,9 +192,9 @@ gulp.task('watch', ['dev'], function() {
     gulp.watch('./src/tpl/**/*.html', ['cache_tpl_html_dev']);
 });
 
-gulp.task('test-unit', function(cb) {
+gulp.task('test-unit', function (cb) {
     execFile('./phantomjs', ['./tests/phantom/run-tests.js'],
-        function(err, stdout, stderr) {
+        function (err, stdout, stderr) {
             if (err && err.code === 'ENOENT') {
                 console.error('\nThe tests did NOT run!\n');
                 console.log('Please download phantomjs for your platform from http://phantomjs.org/download.html');
@@ -212,7 +215,7 @@ gulp.task('test', sequence('dev-js', 'test-unit'));
 
 // for browser-sync
 gulp.task('sync-js-watch', ['concat_js_dev'], reload);
-gulp.task('serve', function() {
+gulp.task('serve', function () {
     browserSync.init({
         server: {
             baseDir: "./"
@@ -230,6 +233,6 @@ gulp.task('serve', function() {
     gulp.watch('src/tpl/**/*.html').on("change", reload);
 });
 
-gulp.task('default', function() {
+gulp.task('default', function () {
     gulp.start('dev');
 });

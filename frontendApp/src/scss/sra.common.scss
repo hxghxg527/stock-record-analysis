@@ -23,6 +23,7 @@ html {
   font-family: $sra-global-font-family;
   font-size: 12px;
   height: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 li,
@@ -40,9 +41,19 @@ ul {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
   &:focus {
     outline: none
   }
+}
+
+input {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  outline: none;
+  -webkit-font-smoothing: antialiased;
 }
 
 // clear fix

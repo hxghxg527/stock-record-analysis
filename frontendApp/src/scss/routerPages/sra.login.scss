@@ -35,7 +35,7 @@
     .sra_login_page_login_part {
       width: 380px;
       height: 340px;
-      background-color: rgba(255, 255, 255, .92);
+      background-color: rgba(255, 255, 255, .95);
       position: absolute;
       right: 100px;
       top: 50%;
@@ -50,6 +50,28 @@
         font-size: 16px;
         font-weight: $sra-global-font-weight-bold;
         box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+      }
+
+      .sra_login_page_login_part_content {
+        padding: 20px 20px;
+        .sra_login_page_login_part_content_input_container {
+          height: 42px;
+          border: 1px solid #DDDDDD;
+          margin: 20px 0;
+          .sra_login_icon {
+            background: #DDDDDD;
+            height: 40px;
+            line-height: 40px;
+            width: 40px;
+          }
+          .sra_login_input {
+            height: 40px;
+            line-height: 40px;
+            border: none;
+            width: calc(100% - 40px);
+            padding: 0 10px;
+          }
+        }
       }
     }
   }
