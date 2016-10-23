@@ -41,6 +41,16 @@
       top: 50%;
       margin-top: -170px;
       border-radius: 3px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, .3);
+
+      .sra_login_page_login_part_header {
+        height: 50px;
+        line-height: 50px;
+        padding: 0 20px;
+        font-size: 16px;
+        font-weight: $sra-global-font-weight-bold;
+        box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+      }
     }
   }
 }
