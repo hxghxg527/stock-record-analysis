@@ -53,7 +53,7 @@
       }
 
       .sra_login_page_login_part_content {
-        padding: 20px 20px;
+        padding: 15px 20px;
         .sra_login_page_login_part_content_input_container {
           height: 42px;
           border: 1px solid #DDDDDD;
@@ -70,6 +70,32 @@
             border: none;
             width: calc(100% - 40px);
             padding: 0 10px;
+          }
+        }
+
+        .sra_login_page_login_part_content_other_container {
+          height: 22px;
+          line-height: 22px;
+          a:hover {
+            color: #c40000;
+            text-decoration: underline;
+          }
+        }
+
+        .sra_login_page_login_part_content_button {
+          height: 40px;
+          line-height: 40px;
+          margin-top: 20px;
+          //background-color: rgba(196, 0, 0, 0.78);
+          background-color: rgba(0, 0, 0, 1);
+          border-radius: 3px;
+          color: #fff;
+          font-size: 18px;
+          cursor: pointer;
+          transition: background-color 300ms ease-in-out;
+          &:hover {
+            //background-color: #c40000;
+            background-color: rgba(0, 0, 0, .85);
           }
         }
       }
