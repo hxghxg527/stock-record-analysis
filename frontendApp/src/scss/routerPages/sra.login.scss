@@ -1,7 +1,13 @@
 .sra_login_page {
+  background: url($sra-global-icon-url + "login_bg1.jpg") no-repeat center;
+  background-color: #fff;
+  background-size: cover;
+  height: 100%;
+  overflow-x: hidden;
+
   .sra_login_page_header {
     height: 90px;
-    background: #fff;
+    background: rgba(255, 255, 255, .85);
 
     .sra_login_page_header_left_container {
       width: 1024px;
@@ -21,7 +27,20 @@
   }
 
   .sra_login_page_middle_container {
-    background: url($sra-global-icon-url + "login_bg1.jpg") no-repeat center;
-    height: calc(100vh - 90px);
+    //height: calc(100vh - 90px);
+    height: calc(100% - 90px);
+    min-height: 400px;
+    position: relative;
+
+    .sra_login_page_login_part {
+      width: 380px;
+      height: 340px;
+      background-color: rgba(255, 255, 255, .92);
+      position: absolute;
+      right: 100px;
+      top: 50%;
+      margin-top: -170px;
+      border-radius: 3px;
+    }
   }
 }
