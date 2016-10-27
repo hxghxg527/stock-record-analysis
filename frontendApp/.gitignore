@@ -1,6 +1,5 @@
 /node_modules
 /bower_modules
-/src/compiledFiles
 /src/js/templateCache
 /release
 .idea
